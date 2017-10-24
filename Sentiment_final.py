@@ -31,7 +31,7 @@ random.seed(123)
 #creates lists of all positive and negative unigrams  and creating model
 #creating list of list of all entries/sentences
 pos_uni = []
-with open("C:\\Users\\venkata ramana\\Desktop\\Sentiment\\1.csv", 'r') as posSentences:
+with open("~//1.csv", 'r') as posSentences:
     for i in posSentences:
         posWord = re.findall(r"[a-zA-Z]+|['']", i.rstrip())         
         posWord = ','.join([c for c in posWord if c != "'"])
@@ -41,7 +41,7 @@ with open("C:\\Users\\venkata ramana\\Desktop\\Sentiment\\1.csv", 'r') as posSen
         pos_uni.append(posWord)  
 
 neg_uni = []
-with open("C:\\Users\\venkata ramana\\Desktop\\Sentiment\\0.csv", 'r') as negSentences:
+with open("~\\0.csv", 'r') as negSentences:
     for i in negSentences:
         negWord = re.findall(r"[a-zA-Z]+|['']", i.rstrip())
         negWord = ','.join([c for c in negWord if c != "'"])
@@ -104,7 +104,7 @@ def best_uni_features(words):
 
 #creating list of unigrams and checking whether best unigrams are present in them
 best_pos_uni = []
-with open("C:\\Users\\venkata ramana\\Desktop\\Sentiment\\1.csv", 'r') as posSentences:
+with open("~\\1.csv", 'r') as posSentences:
     for i in posSentences:
         posWord = re.findall(r"[a-zA-Z]+|['']", i.rstrip())         
         posWord = ','.join([c for c in posWord if c != "'"])
@@ -115,7 +115,7 @@ with open("C:\\Users\\venkata ramana\\Desktop\\Sentiment\\1.csv", 'r') as posSen
 best_pos_uni = [x for x in best_pos_uni if x != [{}, 'pos']]
 
 best_neg_uni = []    
-with open("C:\\Users\\venkata ramana\\Desktop\\Sentiment\\0.csv", 'r') as negSentences:
+with open("~\\0.csv", 'r') as negSentences:
     for i in negSentences:
         negWord = re.findall(r"[a-zA-Z]+|['']", i.rstrip())         
         negWord = ','.join([c for c in negWord if c != "'"])
@@ -157,7 +157,7 @@ random.seed(123)
 #creates lists of all positive and negative bigrams  and creating model
 #creating list of list of all entries/sentences
 pos_lines = []
-with open("C:\\Users\\venkata ramana\\Desktop\\Sentiment\\1.csv", 'r') as posSentences:
+with open("~\\1.csv", 'r') as posSentences:
     for i in posSentences:
         posWord = re.findall(r"[a-zA-Z]+|['']", i.rstrip())         
         posWord = ','.join([c for c in posWord if c != "'"])
@@ -175,7 +175,7 @@ for index in range(len(pos_lines)):
            pos_bi.append(''.join([line[word], line[word+1]]))
                             
 neg_lines = []  
-with open("C:\\Users\\venkata ramana\\Desktop\\Sentiment\\0.csv", 'r') as negSentences:
+with open("~\\0.csv", 'r') as negSentences:
     for i in negSentences:
         negWord = re.findall(r"[a-zA-Z]+|['']", i.rstrip())
         negWord = ','.join([c for c in negWord if c != "'"])
@@ -255,7 +255,7 @@ def best_bigrams_features8(words):
 #creating list of bigrams and checking whether best bigrams are present in top 6000 pos and neg bigrams  
 best_pos_bi6 = []       
 pos_bi_Features6 = []
-with open("C:\\Users\\venkata ramana\\Desktop\\Sentiment\\1.csv", 'r') as posSentences:
+with open("~\\1.csv", 'r') as posSentences:
     #file = posSentences
     for i in posSentences:
         posWord = re.findall(r"[a-zA-Z]+|['']", i.rstrip())  
@@ -272,7 +272,7 @@ best_pos_bi6 = [x for x in best_pos_bi6 if x != [{}, 'pos']]
 
 best_neg_bi6 = []
 neg_bi_Features6 = []        
-with open("C:\\Users\\venkata ramana\\Desktop\\Sentiment\\0.csv", 'r') as negSentences:
+with open("~\\0.csv", 'r') as negSentences:
     for i in negSentences:
         negWord = re.findall(r"[a-zA-Z]+|['']", i.rstrip())  
         negWord = ','.join([c for c in negWord if c != "'"])
@@ -317,7 +317,7 @@ print 'neg recall6:', recall(referenceSets_bi6['neg'], testSets_bi6['neg'])
 #creating list of bigrams and checking whether best bigrams are present in top 7000 pos and neg bigrams  
 best_pos_bi7 = []       
 pos_bi_Features7 = []
-with open("C:\\Users\\venkata ramana\\Desktop\\Sentiment\\1.csv", 'r') as posSentences:
+with open("~\\1.csv", 'r') as posSentences:
     #file = posSentences
     for i in posSentences:
         posWord = re.findall(r"[a-zA-Z]+|['']", i.rstrip())  
@@ -334,7 +334,7 @@ best_pos_bi7 = [x for x in best_pos_bi7 if x != [{}, 'pos']]
 
 best_neg_bi7 = []
 neg_bi_Features7 = []        
-with open("C:\\Users\\venkata ramana\\Desktop\\Sentiment\\0.csv", 'r') as negSentences:
+with open("~\\0.csv", 'r') as negSentences:
     for i in negSentences:
         negWord = re.findall(r"[a-zA-Z]+|['']", i.rstrip())  
         negWord = ','.join([c for c in negWord if c != "'"])
@@ -379,7 +379,7 @@ print 'neg recall7:', recall(referenceSets_bi7['neg'], testSets_bi7['neg'])
 #creating list of bigrams and checking whether best bigrams are present in top 8000 pos and neg bigrams  
 best_pos_bi8 = []       
 pos_bi_Features8 = []
-with open("C:\\Users\\venkata ramana\\Desktop\\Sentiment\\1.csv", 'r') as posSentences:
+with open("~\\1.csv", 'r') as posSentences:
     #file = posSentences
     for i in posSentences:
         posWord = re.findall(r"[a-zA-Z]+|['']", i.rstrip())  
@@ -396,7 +396,7 @@ best_pos_bi8 = [x for x in best_pos_bi8 if x != [{}, 'pos']]
 
 best_neg_bi8 = []
 neg_bi_Features8 = []        
-with open("C:\\Users\\venkata ramana\\Desktop\\Sentiment\\0.csv", 'r') as negSentences:
+with open("~\\0.csv", 'r') as negSentences:
     for i in negSentences:
         negWord = re.findall(r"[a-zA-Z]+|['']", i.rstrip())  
         negWord = ','.join([c for c in negWord if c != "'"])
@@ -464,7 +464,7 @@ def best_uni_bi_features8(words):
 
 #creating list of unigrams and bigrams and checking whether best bigrams are present in top 6000 pos and neg uni and bigrams  
 pos_uni_bi6 = []
-with open("C:\\Users\\venkata ramana\\Desktop\\Sentiment\\1.csv", 'r') as posSentences:
+with open("~\\1.csv", 'r') as posSentences:
     for i in posSentences:
         posWord1 = re.findall(r"[a-zA-Z]+|['']", i.rstrip())         
         posWord1 = ','.join([c for c in posWord1 if c != "'"])
@@ -479,7 +479,7 @@ with open("C:\\Users\\venkata ramana\\Desktop\\Sentiment\\1.csv", 'r') as posSen
 pos_uni_bi6 = [x for x in pos_uni_bi6 if x != [{}, 'pos']]       
 
 neg_uni_bi6 = []
-with open("C:\\Users\\venkata ramana\\Desktop\\Sentiment\\0.csv", 'r') as negSentences:
+with open("~\\0.csv", 'r') as negSentences:
     for i in negSentences:
         negWord1 = re.findall(r"[a-zA-Z]+|['']", i.rstrip())         
         negWord1 = ','.join([c for c in negWord1 if c != "'"])
@@ -524,7 +524,7 @@ print 'neg recall6:', recall(referenceSets_uni_bi6['neg'], testSets_uni_bi6['neg
 
 #creating list of unigrams and bigrams and checking whether best bigrams are present in top 7000 pos and neg uni and bigrams  
 pos_uni_bi7 = []
-with open("C:\\Users\\venkata ramana\\Desktop\\Sentiment\\1.csv", 'r') as posSentences:
+with open("~\\1.csv", 'r') as posSentences:
     for i in posSentences:
         posWord1 = re.findall(r"[a-zA-Z]+|['']", i.rstrip())         
         posWord1 = ','.join([c for c in posWord1 if c != "'"])
@@ -539,7 +539,7 @@ with open("C:\\Users\\venkata ramana\\Desktop\\Sentiment\\1.csv", 'r') as posSen
 pos_uni_bi7 = [x for x in pos_uni_bi7 if x != [{}, 'pos']]       
 
 neg_uni_bi7 = []
-with open("C:\\Users\\venkata ramana\\Desktop\\Sentiment\\0.csv", 'r') as negSentences:
+with open("~\\0.csv", 'r') as negSentences:
     for i in negSentences:
         negWord1 = re.findall(r"[a-zA-Z]+|['']", i.rstrip())         
         negWord1 = ','.join([c for c in negWord1 if c != "'"])
@@ -584,7 +584,7 @@ print 'neg recall7:', recall(referenceSets_uni_bi7['neg'], testSets_uni_bi7['neg
 
 #creating list of unigrams and bigrams and checking whether best bigrams are present in top 8000 pos and neg uni and bigrams  
 pos_uni_bi8 = []
-with open("C:\\Users\\venkata ramana\\Desktop\\Sentiment\\1.csv", 'r') as posSentences:
+with open("~\\1.csv", 'r') as posSentences:
     for i in posSentences:
         posWord1 = re.findall(r"[a-zA-Z]+|['']", i.rstrip())         
         posWord1 = ','.join([c for c in posWord1 if c != "'"])
@@ -599,7 +599,7 @@ with open("C:\\Users\\venkata ramana\\Desktop\\Sentiment\\1.csv", 'r') as posSen
 pos_uni_bi8 = [x for x in pos_uni_bi8 if x != [{}, 'pos']]       
 
 neg_uni_bi8 = []
-with open("C:\\Users\\venkata ramana\\Desktop\\Sentiment\\0.csv", 'r') as negSentences:
+with open("~\\0.csv", 'r') as negSentences:
     for i in negSentences:
         negWord1 = re.findall(r"[a-zA-Z]+|['']", i.rstrip())         
         negWord1 = ','.join([c for c in negWord1 if c != "'"])
